@@ -19,18 +19,18 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('embedded-CI-externals/configs/modbus-gateway_defconfig') }}
       - name: set the buildroot config
         id: br-config
-        uses: fmahiant/docker-buildroot-action@v7
+        uses: fmahiant/docker-buildroot-action@v8
         with:
-          make-target: 'modbus-gateway_defconfig'
-          buildroot-path: 'buildroot'
-          buildroot-external-path: 'embedded-CI-externals'
+          make_target: 'modbus-gateway_defconfig'
+          buildroot_path: 'buildroot'
+          buildroot_external_path: 'embedded-CI-externals'
       - name: build the sdk
         id: br-sdk
         uses: fmahiant/docker-buildroot-action@v7
         with:
-          make-target: 'sdk'
-          buildroot-path: 'buildroot'
-          buildroot-external-path: 'embedded-CI-externals'
+          make_target: 'sdk'
+          buildroot_path: 'buildroot'
+          buildroot_external_path: 'embedded-CI-externals'
       - name: store the artifact
         uses: actions/upload-artifact@v3
         with:
