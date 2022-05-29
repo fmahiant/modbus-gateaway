@@ -19,7 +19,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('embedded-CI-externals/configs/modbus-gateway_defconfig') }}
       - name: set the buildroot config
         id: br-config
-        uses: fmahiant/docker-buildroot-action@v1
+        uses: fmahiant/docker-buildroot-action@v2
         with:
           make-target: 'modbus-gateway_defconfig'
           buildroot-path: 'buildroot'
