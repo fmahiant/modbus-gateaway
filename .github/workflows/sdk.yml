@@ -26,7 +26,7 @@ jobs:
           buildroot-external-path: 'embedded-CI-externals'
       - name: build the sdk
         id: br-sdk
-        uses: fmahiant/docker-buildroot-action@v1
+        uses: fmahiant/docker-buildroot-action@v2
         with:
           make-target: 'sdk'
           buildroot-path: 'buildroot'
