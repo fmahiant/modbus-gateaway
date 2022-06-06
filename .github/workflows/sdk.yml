@@ -14,14 +14,14 @@ jobs:
           submodules: recursive
       - 
         name: Cache ccache
-        id: br-cache
+        id: br-ccache
         uses: actions/cache@v3
         with:
           path: '$HOME/.buildroot-ccache'
           key: ${{ runner.os }}-br-ccahce-${{ hashFiles('embedded-CI-externals/configs/modbus-gateway_defconfig') }}
       -
         name: Cache dl
-        id: br-cache
+        id: br-dl
         uses: actions/cache@v3
         with:
           path: 'buildroot/dl'
