@@ -50,7 +50,7 @@ jobs:
           path: buildroot/output/images/*sdk-buildroot.tar.gz
       - 
         name: move to docker-sdk directory
-        run: mv buildroot/output/images/*sdk-buildroot.tar.gz ../../../docker-sdk/
+        run: mv buildroot/output/images/*sdk-buildroot.tar.gz docker-sdk/
       -
         name: Set up Docker Buildx
         id: buildx
