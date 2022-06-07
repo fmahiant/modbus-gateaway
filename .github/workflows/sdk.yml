@@ -50,7 +50,7 @@ jobs:
           path: buildroot/output/images/*sdk-buildroot.tar.gz
       - 
         name: move to docker-sdk directory
-        run: mv buildroot/output/images/*sdk-buildroot.tar.gz docker-sdk/
+        run: sudo mv buildroot/output/images/*sdk-buildroot.tar.gz docker-sdk/
       -
         name: Set up Docker Buildx
         id: buildx
@@ -63,7 +63,6 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
-  
       -
         name: Login to ghcr
         if: github.event_name != 'pull_request'
