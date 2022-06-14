@@ -17,7 +17,7 @@ jobs:
         id: br-ccache
         uses: actions/cache@v3
         with:
-          path: '$HOME/.buildroot-ccache'
+          path: '/root/.buildroot-ccache'
           key: ${{ runner.os }}-br-ccahce-${{ hashFiles('embedded-CI-externals/configs/modbus-gateway_defconfig') }}
       -
         name: Cache dl
@@ -25,7 +25,14 @@ jobs:
         uses: actions/cache@v3
         with:
           path: 'buildroot/dl'
-          key: ${{ runner.os }}-br-dl-${{ hashFiles('embedded-CI-externals/configs/modbus-gateway_defconfig') }}
+          key: ${{ runner.os }}-br-dl}}
+            -
+        name: Cache build
+        id: br-build
+        uses: actions/cache@v3
+        with:
+          path: 'buildroot/output/build'
+          key: ${{ runner.os }}-br-build-${{ hashFiles('embedded-CI-externals/configs/modbus-gateway_defconfig') }}
       - 
         name: set the buildroot config
         id: br-config
